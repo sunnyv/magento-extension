@@ -20,7 +20,17 @@
     </admin>
   
    <global>
-            <blocks>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product_visibility>Vendor_Overridecontroller_Model_Product_Visibility<product_visibility>
+                </rewrite>
+            </catalog>
+        </models>
+ 
+       	   
+	
+		    <blocks>
                     <adminhtml>
                        <rewrite>
                            <catalog_product_grid>Vendor_Overridecontroller_Block_Catalog_Product_Grid</catalog_product_grid>
@@ -28,7 +38,7 @@
                        </rewrite>
                     </adminhtml>
            </blocks>
-        </global>
+     </global>
 
 
 
