@@ -23,7 +23,7 @@
         <models>
             <catalog>
                 <rewrite>
-                    <product_visibility>Vendor_Overridecontroller_Model_Product_Visibility<product_visibility>
+                    <product_visibility>Vendor_Overridecontroller_Model_Product_Visibility</product_visibility>
                 </rewrite>
             </catalog>
         </models>
