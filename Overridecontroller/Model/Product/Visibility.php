@@ -32,7 +32,7 @@
  * @package    Mage_Catalog
  * @author     Magento Core Team <core@magentocommerce.com>
  */
-class Vendor_Overridecontroller_Model_Product_Visibility extends Varien_Object
+class Vendor_Overridecontroller_Model_Product_Visibility extends Mage_Catalog_Model_Product_Visibility
 {
 	const VISIBILITY_NOT_VISIBLE    = 1;
     const VISIBILITY_IN_CATALOG     = 2;
@@ -136,7 +136,6 @@ class Vendor_Overridecontroller_Model_Product_Visibility extends Varien_Object
     static public function getOptionArray()
     { 
        #$code to get the SERVER REQUEST URI 29-2-12
-	   
 	   $request=$_SERVER['REQUEST_URI'];
 	   $arr=explode("/", $request);
        $productid=$arr[7];
