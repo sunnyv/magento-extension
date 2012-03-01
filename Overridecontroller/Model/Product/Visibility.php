@@ -134,7 +134,7 @@ class Vendor_Overridecontroller_Model_Product_Visibility extends Varien_Object
      * @return array
      */
     static public function getOptionArray()
-    {die; 
+    { 
        #$code to get the SERVER REQUEST URI 29-2-12
 	   
 	   $request=$_SERVER['REQUEST_URI'];
