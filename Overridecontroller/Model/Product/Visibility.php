@@ -139,7 +139,7 @@ class Vendor_Overridecontroller_Model_Product_Visibility extends Mage_Catalog_Mo
 	   $request=$_SERVER['REQUEST_URI'];
 	   $arr=explode("/", $request);
        $productid=$arr[7];
-
+       $id=$arr[6];   
 	   if(Mage::getSingleton('admin/session')->getUser()->user_id==1){
         return array(
             self::VISIBILITY_NOT_VISIBLE=> Mage::helper('catalog')->__('Not Visible Individually'),
@@ -148,15 +148,19 @@ class Vendor_Overridecontroller_Model_Product_Visibility extends Mage_Catalog_Mo
             self::VISIBILITY_BOTH       => Mage::helper('catalog')->__('Catalog, Search')
         );
 	  }
-	    else{
+	    elseif(!empty($productid) and $id=='id'){
 			    $model = Mage::getModel('catalog/product');	
 			    $model->load($productid);
 			    $visibility=$model->getVisibility(); 
 			
-		          if($visibility==4){return array( self::VISIBILITY_BOTH=> Mage::helper('catalog')->__('Catalog, Search'));}
-				  if($visibility==1){return array( self::VISIBILITY_NOT_VISIBLE=> Mage::helper('catalog')->__('Not Visible Individually'));}	
-		  
-        	}
+		          if($visibility==4){return array( self::VISIBILITY_BOTH=> Mage::helper('catalog')->__('Catalog, Search'));
+				  }else{
+				       return array( self::VISIBILITY_NOT_VISIBLE=> Mage::helper('catalog')->__('Not Visible Individually'));
+				      }	
+		    	}
+		else{
+			     return array( self::VISIBILITY_NOT_VISIBLE=> Mage::helper('catalog')->__('Not Visible Individually'));
+			}
     }
 
     /**
