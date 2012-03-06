@@ -16,6 +16,12 @@
 						<sort_order>1</sort_order>
 						<action>vcatalog/adminhtml_vsubscription</action>
 					</items_1>
+					
+					<items_1 module="vcatalog">
+						<title>Manage Subscription</title>
+						<sort_order>1</sort_order>
+						<action>vcatalog/adminhtml_vsubscription</action>
+					</items_1>
 				</children>
 			</vcatalog>
 		</menu>
